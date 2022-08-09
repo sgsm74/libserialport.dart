@@ -182,9 +182,13 @@ abstract class SerialPortConfig {
 
 // ignore_for_file: avoid_private_typedef_functions
 typedef _SerialPortConfigGet = int Function(
-    ffi.Pointer<sp_port_config> config, ffi.Pointer<ffi.Int32> out);
+  ffi.Pointer<sp_port_config> config,
+  ffi.Pointer<ffi.Int32> out,
+);
 typedef _SerialPortConfigSet = int Function(
-    ffi.Pointer<sp_port_config> config, int value);
+  ffi.Pointer<sp_port_config> config,
+  int value,
+);
 
 class _SerialPortConfigImpl implements SerialPortConfig {
   final ffi.Pointer<sp_port_config> _config;
